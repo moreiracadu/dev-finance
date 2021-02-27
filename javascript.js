@@ -74,6 +74,7 @@ const Transaction = {
     },
 
     total(){
+        Utils.checkFormat(Transaction.income() + Transaction.expense())
         return Transaction.income() + Transaction.expense();
     },
     
@@ -133,7 +134,7 @@ const Utils = {
 
     formatAmount(value){
          value = Number(value) * 100
-         return value
+         return Math.round(value)
     },
 
     formatCurrency(value) {
@@ -151,7 +152,31 @@ const Utils = {
 
         return signal + value
 
+    },
+
+    checkFormat(value) {
+        if (value >= 0){
+            Utils.removeFormat();
+        }
+        else {
+            Utils.addFormat();
+        }
+    },
+
+    addFormat () {        
+        document
+        .querySelector('.card.total')
+        .classList
+        .add('negative')
+    },
+
+    removeFormat() {
+        document
+        .querySelector('.card.total')
+        .classList
+        .remove('negative')
     }
+
 }
 
 const Form = {

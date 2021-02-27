@@ -29,7 +29,7 @@ header{
     margin-top:-8rem;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 1rem;
+    gap: 0.5rem;
 }
 
 #balance h2{
@@ -77,6 +77,10 @@ header{
     background: #49AA26;
     color:white;
 
+}
+
+.card.total.negative{
+    background: rgb(236, 2, 2)
 }
 
 /* BUTTON */
